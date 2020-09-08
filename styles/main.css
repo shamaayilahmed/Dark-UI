@@ -232,7 +232,7 @@ main section .right {
 
 main footer {
   color: var(--linksnfootertxt);
-  height: 5vh;
+  height: 7vh;
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -251,5 +251,14 @@ main footer {
   grid-row: 3;
   position: fixed;
   bottom: 0;
+}
+
+main footer .social-icons i {
+  padding: 0.5em;
+  color: var(--linksnfootertxt);
+}
+
+main footer .social-icons i:hover {
+  color: #babac5;
 }
 /*# sourceMappingURL=main.css.map */
