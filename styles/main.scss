@@ -1,0 +1,86 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+html{
+
+}
+body{
+    width: 100%;
+    font: .9em/1.2 Arial,Helvetica, sans-serif;
+}
+main{
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-rows: 1fr 3fr 1fr;
+    grid-gap: 1em;
+    header{
+        height: 12vh;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        background-color: sandybrown;
+        border-radius: 1em;
+        grid-column: 1/4;
+        grid-row: 1;
+        .logo{
+            position: relative;
+        }
+        .nav{
+            position: relative;
+            .links{
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+                overflow: hidden;
+                .link-item{
+                    float: left;
+                    .link{
+                        display: block;
+                        color: seashell;
+                        text-align: center;
+                        text-decoration: none;
+                        padding: 1em;
+                        &:hover{
+                            background-color: silver;
+                            border-radius: 1em;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    section{
+        grid-column: 1/4;
+        grid-row: 2;
+        display: grid;
+        grid-template-columns: subgrid;
+        grid-template-rows: subgrid;
+        .left{
+            background-color: silver;
+            border-radius: 5px;
+        }
+        article{
+            background-color: skyblue;
+            border-radius: 5px;
+        }
+        .right{
+            background-color: slategray;
+            border-radius: 5px;
+        }
+    }
+    footer{
+        height: 5vh;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: rebeccapurple;
+        grid-column: 1/4;
+        grid-row: 3;
+        // position: fixed;
+        // bottom: 0;
+    }
+}
