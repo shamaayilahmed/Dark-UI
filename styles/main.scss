@@ -2,6 +2,7 @@ $post-height:32%;
 $post-radius:5px;
 
 @import 'toggler';
+@import 'transition';
 
 *{
     box-sizing: border-box;
@@ -10,12 +11,26 @@ $post-radius:5px;
 html{
  --bg:#FCFCFC;
  --panel: rgb(47, 54, 122);
+ --footer:rgb(44, 33, 139);
  --headings:rgb(15, 14, 14);
- --linksnfooter:#fff;
-
+ --linksnfootertxt:#fff;
+ --recommend1:rgb(63, 125, 187);
+ --recommend2:rgb(42, 139, 156);
+ --recommend3:steelblue;
+ --feed:rgb(102, 195, 231);
+ --ads:rgb(179, 185, 192);
 }
 html[data-theme='dark']{
-
+    --bg:#333333;
+    --panel: rgb(36, 42, 92);
+    --footer:rgb(19, 15, 59);
+    --headings:#b5b5b5;
+    --linksnfootertxt:#b5b5b5;
+    --recommend1:rgb(23, 44, 65);
+    --recommend2:rgb(15, 50, 56);
+    --recommend3:rgb(27, 48, 65);
+    --feed:rgb(58, 98, 114);
+    --ads:rgb(102, 103, 105);
 }
 body{
     background: var(--bg);
@@ -32,8 +47,9 @@ main{
         height: 12vh;
         display: flex;
         align-items: center;
-        justify-content: space-evenly;
+        justify-content: space-between;
         width: 100%;
+        padding: 3vw;
         background-color:var(--panel);
         border-radius: 1em;
         grid-column: 1/4;
@@ -54,7 +70,7 @@ main{
                     float: left;
                     .link{
                         display: block;
-                        color:var(--linksnfooter);
+                        color:var(--linksnfootertxt);
                         text-align: center;
                         text-decoration: none;
                         padding: 1em;
@@ -66,45 +82,6 @@ main{
                     }
                 }
             }
-        }
-        .toggler{
-            input[type=checkbox]{
-                height: 0;
-                width: 0;
-                visibility: hidden;
-                &:checked + label{
-                    background: #0077ff;
-                    &:after{
-                        left:calc(100% - 3px);
-                        transform: translateX(-100%);
-                    }
-                }
-            }
-            label{
-                cursor: pointer;
-                text-indent: -9999px;
-                width: 52px;
-                height: 27px;
-                background: grey;
-                float: right;
-                border-radius: 100px;
-                position: relative;
-                &:after{
-                    content: '';
-                    position: absolute;
-                    top: 3px;
-                    left: 3px;
-                    width: 20px;
-                    height: 20px;
-                    background: #fff;
-                    border-radius: 90px;
-                    transition: 0.3s;
-                }
-            }
-            label:active:after{
-                    width:42px;
-            }
-
         }
     }
     section{
@@ -127,43 +104,43 @@ main{
                 border-radius: $post-radius;
                 font-size: 3vh;
                 &:hover{
-                    transition: 0.3s ease-in-out;
+                    transition: 0.4s ease-in-out;
                     transform: scale(1.1);
                 }
             }
             .one{
-                background-color: rgb(63, 125, 187);
+                background-color: var(--recommend1);
             }
             .two{
-                background-color: rgb(42, 139, 156);
+                background-color: var(--recommend2);
             }
             .three{
-                background-color: steelblue;
+                background-color: var(--recommend3);
             }
         }
         article{
             font-size: 3vw;
             padding: 4em;
             text-align: center;
-            background-color: rgb(102, 195, 231);
+            background-color: var(--feed);
             border-radius: 5px;
         }
         .right{
             font-size: 2.6vh;
             padding: 1em;
-            background-color: rgb(179, 185, 192);
+            background-color: var(--ads);
             border-radius: 5px;
             margin-right: 0.3em;
         }
     }
     footer{
-        color: wheat;
+        color: var(--linksnfootertxt);
         height: 5vh;
         width: 100%;
         display: flex;
         align-items: center;
         justify-content: space-between;
-        background-color: rgb(44, 33, 139);
+        background-color: var(--footer);
         grid-column: 1/4;
         grid-row: 3;
         position: fixed;
